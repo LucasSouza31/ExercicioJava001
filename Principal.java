@@ -7,6 +7,7 @@ public class Principal {
         static int valorReferencia = 5;
         static Produto produtos[]= new Produto[valorReferencia];
         // alterações foram feitas, declarando a variável "ler" globalmente, por conta de erros "NoSuchElementException"
+        // erro acontecia porque 
         static Scanner ler = new Scanner(System.in); 
         
 
