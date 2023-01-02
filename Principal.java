@@ -29,8 +29,7 @@ public class Principal {
            
         }
 
-    private static void comprarProduto() {
-                
+    private static void comprarProduto() {                
         
                 int codigoProduto;
                 int quantidadeDesejada;
