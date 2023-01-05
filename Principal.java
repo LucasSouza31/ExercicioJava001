@@ -50,6 +50,9 @@ public class Principal {
             System.out.println("Valor total: "+valorTotal);
             produtos[codigoProduto].retirarDoEstoque(quantidadeDesejada);            
         }
+        else{
+            System.out.println("Não temos a quantidade solicitada!");
+        }
 
         
         menu();
