@@ -12,6 +12,10 @@ public class Produto {
         this.valor = valor;
     }
 
+    public void verificarQuantidade(int quantidadeDesejada) {
+        if(this.quantidadeEmEstoque<=quantidadeDesejada ) 
+                    
+    }
     
     public void adicionarAoEstoque(int quantidadeParaAdicionar) {
         this.quantidadeEmEstoque+=quantidadeParaAdicionar;

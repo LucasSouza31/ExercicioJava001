@@ -45,9 +45,11 @@ public class Principal {
         System.out.println("Informar a quantidade desejada: ");
         quantidadeDesejada= ler.nextInt();
 
-        valorTotal=produtos[codigoProduto].getValor()*quantidadeDesejada;
-        System.out.println("Valor total: "+valorTotal);
-        produtos[codigoProduto].retirarDoEstoque(quantidadeDesejada);
+        if(quantidadeDesejada<=produtos[codigoProduto].getQuantidadeEmEstoque()){
+            valorTotal=produtos[codigoProduto].getValor()*quantidadeDesejada;
+            System.out.println("Valor total: "+valorTotal);
+            produtos[codigoProduto].retirarDoEstoque(quantidadeDesejada);            
+        }
 
         
         menu();
@@ -62,6 +64,7 @@ public class Principal {
                     System.out.println("Nome: "+produtos[i].getNome()+" Código: "+i);
                 }              
 
+                
                 System.out.println("Informe o código do produto: ");
                 int codigoProduto= ler.nextInt();
                 System.out.println("Informe a quantidade que deseja adicionar: ");
