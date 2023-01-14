@@ -1,11 +1,13 @@
 package youtube;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
 
         static int valorReferencia = 5;
-        static Produto produtos[]= new Produto[valorReferencia];
+       // static Produto produtos[]= new Produto[valorReferencia];
+        static ArrayList<Produto> produtos= new ArrayList<>();
         // alterações foram feitas, declarando a variável "ler" globalmente, por conta de erros "NoSuchElementException"
         // erro acontecia porque estava fechando a variável responsável por ler dados do teclado, nesse caso o "ler.close()"
         static Scanner ler = new Scanner(System.in); 
@@ -37,7 +39,7 @@ public class Principal {
                 double valorTotal;
         
         for(int i=0;i<3;i++){
-            System.out.println("Nome: "+produtos[i].getNome()+" Código: "+i);
+            System.out.println("Nome: "+produtos.get(i).getNome()+" Código: "+i);
         }   
 
         System.out.println("Informar o códido do produto desejado: ");
@@ -45,10 +47,10 @@ public class Principal {
         System.out.println("Informar a quantidade desejada: ");
         quantidadeDesejada= ler.nextInt();
 
-        if(quantidadeDesejada<=produtos[codigoProduto].getQuantidadeEmEstoque()){
-            valorTotal=produtos[codigoProduto].getValor()*quantidadeDesejada;
+        if(quantidadeDesejada<=produtos.get(codigoProduto).getQuantidadeEmEstoque()){
+            valorTotal=produtos.get(codigoProduto).getValor()*quantidadeDesejada;
             System.out.println("Valor total: "+valorTotal);
-            produtos[codigoProduto].retirarDoEstoque(quantidadeDesejada);            
+            produtos.get(codigoProduto).retirarDoEstoque(quantidadeDesejada);            
         }
         else{
             System.out.println("Não temos a quantidade solicitada!");
@@ -64,7 +66,7 @@ public class Principal {
     private static void abastecerOEstoque() {
                 
                 for(int i=0;i<3;i++){
-                    System.out.println("Nome: "+produtos[i].getNome()+" Código: "+i);
+                    System.out.println("Nome: "+produtos.get(i).getNome()+" Código: "+i);
                 }              
 
                 
@@ -72,7 +74,7 @@ public class Principal {
                 int codigoProduto= ler.nextInt();
                 System.out.println("Informe a quantidade que deseja adicionar: ");
                 int quantidadeParaAdicionar= ler.nextInt();
-                produtos[codigoProduto].adicionarAoEstoque(quantidadeParaAdicionar);
+                produtos.get(codigoProduto).adicionarAoEstoque(quantidadeParaAdicionar);
                 
                 menu();
         }
@@ -80,7 +82,7 @@ public class Principal {
     private static void exibirEstoque() {
             for(int i=0;i<3;i++){
                 System.out.println("Código do produto: "+i);
-                produtos[i].relatorioDoEstoque();
+                produtos.get(i).relatorioDoEstoque();
                 System.out.println("__________________");
             }
             menu();
@@ -94,12 +96,15 @@ public class Principal {
 
         Produto p1= new Produto("Coca-Cola", 100, 9.9);
         Produto p2= new Produto("Guaraná", 100, 8.5);
-        Produto p3= new Produto("Vokda", 100, 39.99);
+        Produto p3= new Produto("Vodka", 100, 39.99);
 
-        produtos[0]=p1;
-        produtos[1]=p2;
-        produtos[2]=p3;
+        // produtos[0]=p1;
+        // produtos[1]=p2;
+        // produtos[2]=p3;
 
+        produtos.add(p1);
+        produtos.add(p2);
+        produtos.add(p3);
         menu();
 
 
