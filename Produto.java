@@ -11,8 +11,6 @@ public class Produto {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
         this.valor = valor;
     }
-
-  
     
     public void adicionarAoEstoque(int quantidadeParaAdicionar) {
         this.quantidadeEmEstoque+=quantidadeParaAdicionar;
@@ -26,6 +24,7 @@ public class Produto {
         System.out.println("Nome: "+getNome());
         System.out.println("Quantidade: "+getQuantidadeEmEstoque());
         System.out.println("Valor unitário: "+getValor());
+        System.out.println("____________");
     }
 
     // getters and setters
@@ -47,8 +46,5 @@ public class Produto {
     public void setValor(double valor) {
         this.valor = valor;
     }
-
-
-
 
 }

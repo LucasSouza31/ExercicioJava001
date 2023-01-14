@@ -65,6 +65,7 @@ public class Principal {
 
     private static void abastecerOEstoque() {
                 
+              
                 for(int i=0;i<produtos.size();i++){
                     System.out.println("Nome: "+produtos.get(i).getNome()+" Código: "+i);
                 }              
@@ -80,11 +81,13 @@ public class Principal {
         }
 
     private static void exibirEstoque() {
-            for(int i=0;i<produtos.size();i++){
-                System.out.println("Código do produto: "+i);
-                produtos.get(i).relatorioDoEstoque();
-                System.out.println("__________________");
-            }
+            
+        produtos.forEach(listaProduto-> listaProduto.relatorioDoEstoque());
+            // for(int i=0;i<produtos.size();i++){
+            //     System.out.println("Código do produto: "+i);
+            //     produtos.get(i).relatorioDoEstoque();
+            //     System.out.println("__________________");
+            // }
             menu();
         }
     
