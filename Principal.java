@@ -38,7 +38,7 @@ public class Principal {
                 int quantidadeDesejada;
                 double valorTotal;
         
-        for(int i=0;i<3;i++){
+        for(int i=0;i<produtos.size();i++){
             System.out.println("Nome: "+produtos.get(i).getNome()+" Código: "+i);
         }   
 
@@ -65,7 +65,7 @@ public class Principal {
 
     private static void abastecerOEstoque() {
                 
-                for(int i=0;i<3;i++){
+                for(int i=0;i<produtos.size();i++){
                     System.out.println("Nome: "+produtos.get(i).getNome()+" Código: "+i);
                 }              
 
@@ -80,7 +80,7 @@ public class Principal {
         }
 
     private static void exibirEstoque() {
-            for(int i=0;i<3;i++){
+            for(int i=0;i<produtos.size();i++){
                 System.out.println("Código do produto: "+i);
                 produtos.get(i).relatorioDoEstoque();
                 System.out.println("__________________");
